@@ -49,6 +49,7 @@ export default {
     deleteWorker: ({commit, dispatch}, name) => {
       dispatch('closeTab', name.replace(/\s/g, ''))
       commit('deleteWorker', {name})
+      dispatch('countWorkers')
     },
     openWorker: ({dispatch}, worker) => {
       dispatch('openTab', {
